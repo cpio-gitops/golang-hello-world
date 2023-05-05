@@ -1,9 +1,7 @@
 FROM golang:alpine AS builder
 WORKDIR /build
 
-ARG ARCH=
-
-ENV GOOS=linux GOARCH=${ARCH} CGO_ENABLED=0
+ENV GOOS=linux CGO_ENABLED=0
 
 COPY . .
 RUN go build std
