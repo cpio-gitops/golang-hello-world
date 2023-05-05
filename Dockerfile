@@ -10,6 +10,5 @@ RUN go build -trimpath -ldflags '-w -s -extldflags "-static"' -o /build/app cmd/
 FROM ghcr.io/ironpeakservices/iron-scratch/iron-scratch:1.0.0
 COPY --from=builder /build/app /app
 
-RUN echo "demo" 
 EXPOSE 8080
 ENTRYPOINT ["/app"]
